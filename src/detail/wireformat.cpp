@@ -9,7 +9,7 @@
 
 #include <cassert>
 #include <sstream>
-
+#include <limits>
 
 namespace amqpp
 {

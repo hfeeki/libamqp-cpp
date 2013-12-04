@@ -1,6 +1,7 @@
 #ifndef _LIBAMQPP_FRAME_WRITER_H_INCLUDED_
 #define _LIBAMQPP_FRAME_WRITER_H_INCLUDED_
 
+#include <stdint.h>
 #include <boost/array.hpp>
 #include <boost/asio/buffer.hpp>
 #include <boost/noncopyable.hpp>

@@ -6,6 +6,7 @@
 #include <boost/cstdint.hpp>
 #include <boost/noncopyable.hpp>
 #include <boost/shared_ptr.hpp>
+#include <stdexcept>
 
 #include <iosfwd>
 
@@ -39,9 +40,10 @@ public:
 template <class T>
 typename T::ptr_t properties_cast(const properties::ptr_t& m)
 {
-  typename T::ptr_t ret = boost::shared_dynamic_cast<T>(m);
+  typename T::ptr_t ret = boost::dynamic_pointer_cast<T>(m);
   if (typename T::ptr_t() == ret)
   {
+    using std::runtime_error;
     throw std::runtime_error("Failure to cast properties");
   }
   return ret;
